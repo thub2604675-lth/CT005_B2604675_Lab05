@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infographic & Video</title>
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --card: #ffffff;
+        --text: #1d2a39;
+        --muted: #5f6f82;
+        --accent: #2b6cb0;
+        --border: #dfe8f3;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(180deg, #eef4fb 0%, #f8fafc 100%);
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 32px 20px 40px;
+      }
+
+      .page-header {
+        text-align: center;
+        margin-bottom: 28px;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: var(--accent);
+      }
+
+      .subtitle {
+        margin: 0 auto;
+        max-width: 760px;
+        font-size: 1.08rem;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 24px;
+        align-items: start;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(31, 52, 74, 0.08);
+        overflow: hidden;
+      }
+
+      .image-box {
+        padding: 18px;
+      }
+
+      .image-box img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+      }
+
+      .video-box {
+        padding: 18px;
+      }
+
+      .video-frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #000;
+      }
+
+      .video-frame iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .notes {
+        margin-top: 24px;
+        padding: 18px 20px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        color: var(--text);
+      }
+
+      .notes p {
+        margin: 8px 0;
+        line-height: 1.6;
+      }
+
+      .footer-note {
+        margin-top: 28px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+
+      @media (max-width: 760px) {
+        .content {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="page-header">
+        <h1>Infographic & Video Tổng Quan</h1>
+        <p class="subtitle">
+          Bài trình bày này giới thiệu một hình ảnh infographic trực quan cùng với video YouTube giúp
+          người xem hiểu nhanh nội dung và dễ theo dõi hơn trong quá trình học tập và nghiên cứu.
+        </p>
+      </header>
+
+      <main class="content">
+        <section class="card image-box" aria-label="Infographic">
+          <img src="Lab05_Ex2.1.png" alt="Infographic minh họa nội dung học tập" />
+        </section>
+
+        <section class="card video-box" aria-label="Video Youtube">
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/_whY_mhXNQM?rel=0"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </section>
+      </main>
+
+      <div class="notes">
+        <p><strong>Ghi chú bản quyền:</strong> Tất cả nội dung hình ảnh và video được sử dụng cho mục đích học tập và demo. Vui lòng không sao chép hoặc tái sử dụng thương mại mà không có sự đồng ý rõ ràng.</p>
+        <p><strong>Ghi chú nguồn AI:</strong> Trang web này được xây dựng hỗ trợ bởi trí tuệ nhân tạo để tổ chức nội dung, bố cục và trình bày trực quan, sau đó được kiểm tra và chỉnh sửa bởi con người.</p>
+      </div>
+
+      <footer class="footer-note">
+        Nguồn thông tin: infographic và video tham khảo cho mục tiêu giảng dạy và nghiên cứu.
+      </footer>
+    </div>
+  </body>
+</html>
