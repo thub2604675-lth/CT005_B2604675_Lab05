@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới Thiệu Cá Nhân</title>
+    <style>
+      :root {
+        --bg: #f3f7ff;
+        --card: #ffffff;
+        --text: #1f2d3d;
+        --muted: #5e6d82;
+        --accent: #2563eb;
+        --accent-2: #0ea5e9;
+        --success: #14b8a6;
+        --border: #dfeaf7;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(180deg, #edf5ff 0%, #f9fbff 100%);
+        color: var(--text);
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 32px 20px 48px;
+      }
+
+      .page-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .page-header h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2.2rem, 4vw, 3.2rem);
+        color: var(--accent);
+      }
+
+      .subtitle {
+        max-width: 760px;
+        margin: 0 auto;
+        font-size: 1.08rem;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .profile {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr);
+        gap: 24px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: 0 12px 28px rgba(15, 52, 96, 0.08);
+        padding: 24px;
+        margin-bottom: 28px;
+      }
+
+      .avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        color: #fff;
+        font-size: clamp(3rem, 5vw, 4rem);
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+      .info-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 18px;
+        margin-top: 18px;
+      }
+
+      .info-item {
+        background: #f7f9fd;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 12px 14px;
+      }
+
+      .info-item strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--muted);
+        font-size: 0.8rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .section-title {
+        margin: 0 0 18px;
+        font-size: clamp(1.5rem, 2vw, 2rem);
+        color: var(--accent);
+      }
+
+      .portfolio {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: 0 10px 24px rgba(31, 52, 74, 0.06);
+        overflow: hidden;
+      }
+
+      .product-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+      }
+
+      .product-visual {
+        padding: 16px;
+        background: #f8fbff;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .product-visual img {
+        display: block;
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+      }
+
+      .pdf-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 220px;
+        border: 1px dashed var(--border);
+        border-radius: 12px;
+        background: linear-gradient(135deg, #f9fbff, #eef5ff);
+        color: var(--text);
+        text-align: center;
+      }
+
+      .pdf-box span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 74px;
+        height: 74px;
+        border-radius: 14px;
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--accent);
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .product-body {
+        padding: 18px 18px 20px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      .product-body h3 {
+        margin: 0 0 10px;
+        font-size: 1.25rem;
+      }
+
+      .product-body p {
+        margin: 0 0 16px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 10px 16px;
+        font-weight: 700;
+        transition: 0.2s ease;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        background: #1d4ed8;
+      }
+
+      .video-box {
+        padding: 18px;
+      }
+
+      .video-frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #000;
+      }
+
+      .video-frame iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .notes {
+        margin-top: 28px;
+        padding: 18px 20px;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        color: var(--text);
+      }
+
+      .notes p {
+        margin: 8px 0;
+        line-height: 1.6;
+      }
+
+      .footer-note {
+        margin-top: 28px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+
+      @media (max-width: 900px) {
+        .portfolio {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .profile {
+          grid-template-columns: 1fr;
+        }
+
+        .info-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="page-header">
+        <h1>Giới Thiệu Cá Nhân</h1>
+        <p class="subtitle">
+          Tôi là một sinh viên đang học tập và phát triển kỹ năng trong lĩnh vực công nghệ thông tin,
+          với niềm đam mê sáng tạo, học tập và xây dựng các sản phẩm trực quan có tính ứng dụng thực tế.
+        </p>
+      </header>
+
+      <section class="profile" aria-label="Thông tin cá nhân">
+        <div class="avatar" aria-label="Ảnh đại diện">SV</div>
+
+        <div>
+          <h2 class="section-title">Thông Tin Bản Thân</h2>
+          <div class="info-list">
+            <div class="info-item">
+              <strong>Họ và tên</strong>
+              <span>Nguyễn Văn A</span>
+            </div>
+            <div class="info-item">
+              <strong>MSSV</strong>
+              <span>B2604675</span>
+            </div>
+            <div class="info-item">
+              <strong>Lớp</strong>
+              <span>CT005</span>
+            </div>
+            <div class="info-item">
+              <strong>Email</strong>
+              <span>student@example.com</span>
+            </div>
+            <div class="info-item">
+              <strong>Chuyên ngành</strong>
+              <span>Công Nghệ Thông Tin</span>
+            </div>
+            <div class="info-item">
+              <strong>Sở thích</strong>
+              <span>Thiết kế, lập trình, học hỏi</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Các sản phẩm đã tạo">
+        <h2 class="section-title">3 Sản Phẩm Đã Tạo</h2>
+        <div class="portfolio">
+          <article class="card product-card">
+            <div class="product-visual">
+              <div class="pdf-box" aria-label="File PDF">
+                <span>PDF</span>
+              </div>
+            </div>
+            <div class="product-body">
+              <h3>File PDF</h3>
+              <p>Bản tài liệu điện tử được tạo trong bài tập Lab05_Ex1.1, thể hiện nội dung chuyên môn và bố cục rõ ràng.</p>
+              <a class="btn btn-primary" href="Lab05_Ex1.1.pdf" target="_blank" rel="noreferrer">Mở file PDF</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="product-visual">
+              <img src="Lab05_Ex2.1.png" alt="Hình ảnh infographic sản phẩm" />
+            </div>
+            <div class="product-body">
+              <h3>File PNG</h3>
+              <p>Hình ảnh infographic minh họa nội dung học tập, được thiết kế để truyền tải thông tin trực quan và dễ hiểu.</p>
+              <a class="btn btn-primary" href="Lab05_Ex2.1.png" target="_blank" rel="noreferrer">Xem ảnh PNG</a>
+            </div>
+          </article>
+
+          <article class="card product-card">
+            <div class="video-box">
+              <div class="video-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/_whY_mhXNQM?rel=0"
+                  title="Video giới thiệu YouTube"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="product-body">
+              <h3>Video YouTube</h3>
+              <p>Video tham khảo được nhúng trực tiếp trên trang để minh họa nội dung và tăng tính tương tác cho người xem.</p>
+              <a class="btn btn-primary" href="https://www.youtube.com/watch?v=_whY_mhXNQM" target="_blank" rel="noreferrer">Mở video</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div class="notes">
+        <p><strong>Ghi chú:</strong> Tôi đang tập trung vào việc cải thiện kỹ năng thiết kế giao diện, xử lý nội dung và trình bày trực quan trong các dự án học tập.</p>
+        <p><strong>Mục tiêu:</strong> Học tập và phát triển, tích lũy thêm kinh nghiệm để hoàn thiện các sản phẩm công nghệ trong tương lai.</p>
+      </div>
+
+      <footer class="footer-note">
+        Trang giới thiệu cá nhân được thiết kế nhằm thể hiện thông tin bản thân và các sản phẩm đã tạo trong quá trình học tập.
+      </footer>
+    </div>
+  </body>
+</html>
